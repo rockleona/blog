@@ -24,7 +24,7 @@
 
 
 
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/blog/favicon.ico">
 
 
 
@@ -36,7 +36,7 @@
 
     <!-- stylesheets list from _config.yml -->
     
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/blog/css/style.css">
     
 
 
@@ -44,7 +44,7 @@
 
     <!-- scripts list from _config.yml -->
     
-    <script src="/js/frame.js"></script>
+    <script src="/blog/js/frame.js"></script>
     
 
 
@@ -67,7 +67,7 @@
   <div class="flex-container">
     <div class="header-inner">
       <div class="site-brand-container">
-        <a href="/">
+        <a href="/blog/">
           
             RockLeon.DevBlog
           
@@ -81,25 +81,25 @@
           
             
               <li class="menu-item">
-                <a href="/">Home</a>
+                <a href="/blog/">Home</a>
               </li> 
                    
           
             
               <li class="menu-item">
-                <a href="/archives/">Posts</a>
+                <a href="/blog/archives/">Posts</a>
               </li> 
                    
           
             
               <li class="menu-item">
-                <a target="_blank" rel="noopener" href="https://cv.rockleon.dev">Profile</a>
+                <a href="https://hi.rockleon.dev">Profile</a>
               </li> 
                    
           
             
               <li class="menu-item">
-                <a target="_blank" rel="noopener" href="https://cv.rockleon.dev/linktree">LinkTree</a>
+                <a href="https://hi.rockleon.dev/linktree">LinkTree</a>
               </li> 
                    
           
@@ -122,13 +122,13 @@
             
                 
                     <span class="post-tag">
-                        <a href="/tags/dev/">
+                        <a href="/blog/tags/dev/">
                             dev
                         </a>
                     </span>    
                 
                     <span class="post-tag">
-                        <a href="/tags/diary/">
+                        <a href="/blog/tags/diary/">
                             diary
                         </a>
                     </span>    
@@ -155,11 +155,11 @@
     <div class="post-content">
     <p>自從加入了 <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 翻譯計畫，好像越做越有心得(?)<br>畢竟以前沒有這種可以加入社群貢獻的機會，所以這次我沒有放掉這個機會了。</p>
 <p>本次任務是因為取得了每個頁面的瀏覽次數等資料 [1] ，<br>我想配合上 Organizer 一直有在使用的 <a target="_blank" rel="noopener" href="https://pypi.org/project/potodo/">potodo</a> 工具去計算出每個 po 檔案的翻譯完成度為何 [2] ，<br>進行了本次的資料視覺化挑戰。</p>
-<img src="/2023/09/11/visualize-first-try/code_views.png" class="" title="[code_pageviews]">
+<img src="/blog/2023/09/11/visualize-first-try/code_views.png" class="" title="[code_pageviews]">
 <blockquote>
 <p>[1] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 個別頁面的瀏覽資料</p>
 </blockquote>
-<img src="/2023/09/11/visualize-first-try/code_potodo.png" class="" title="[code_potodo]">
+<img src="/blog/2023/09/11/visualize-first-try/code_potodo.png" class="" title="[code_potodo]">
 <blockquote>
 <p>[2] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 各項檔案的翻譯完成度資料</p>
 </blockquote>
@@ -174,7 +174,7 @@
 <li>X-axis &#x3D;&gt; Visitors</li>
 <li>Y-axis &#x3D;&gt; Pageviews</li>
 <li>Filter :  500 &lt; Pageviews &lt; 2500 </li>
-<li>(500 以下過於密集、2500 以上只有Tutorial&#x2F;index, Library&#x2F;datetime )<img src="/2023/09/11/visualize-first-try/pageviews_visitors.png" class="" title="[pageviews_visitors]"></li>
+<li>(500 以下過於密集、2500 以上只有Tutorial&#x2F;index, Library&#x2F;datetime )<img src="/blog/2023/09/11/visualize-first-try/pageviews_visitors.png" class="" title="[pageviews_visitors]"></li>
 </ul>
 <ol start="2">
 <li>頁面瀏覽次數及訪客數的曲線圖</li>
@@ -185,7 +185,7 @@
 <li>Y-axis &#x3D;&gt; Translated Percent</li>
 <li>Filter : 500 &lt; Pageviews , Remove Tutorial, Installing</li>
 <li>Note : 移掉後面兩個是不知道為什麼跟 potodo 的資料對不上 </li>
-<li>Note : 圖片中 Translated Percent 為 0 的也是 potodo 無資料<img src="/2023/09/11/visualize-first-try/pageviews_translated.png" class="" title="[pageviews_translated]"></li>
+<li>Note : 圖片中 Translated Percent 為 0 的也是 potodo 無資料<img src="/blog/2023/09/11/visualize-first-try/pageviews_translated.png" class="" title="[pageviews_translated]"></li>
 </ul>
 <p>以前擅長的都是結合 GeoData 的地圖視覺化，這次挑戰純數字資料的視覺化是個挑戰啊。</p>
 <p>P.S. 好的資料集真的很重要，向所有的 Data Scientist 看齊！<br>P.P.S. 不小心喚起了記憶，大學時期分數最慘的科目就是<em>統計</em>。</p>
@@ -205,7 +205,7 @@
             
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="/2023/09/11/hello-world/">Next</a>  
+                  <a href="/blog/2023/09/11/hello-world/">Next</a>  
                 </div>  
             
         </div>
