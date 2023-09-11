@@ -12,8 +12,8 @@ logo_image:
 menu:
   Home: /
   Posts: /archives/
-  Profile: https://cv.rockleon.dev
-  LinkTree: https://cv.rockleon.dev/linktree
+  Profile: https://hi.rockleon.dev
+  LinkTree: https://hi.rockleon.dev/linktree
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -37,8 +37,8 @@ profile:
   links:
     Home: /
     Posts: /archives/
-    Profile: https://cv.rockleon.dev
-    LinkTree: https://cv.rockleon.dev/linktree
+    Profile: https://hi.rockleon.dev
+    LinkTree: https://hi.rockleon.dev/linktree
 
 # footer
 footer:
