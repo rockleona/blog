@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="RockLeon">
+
+
+    <meta name="subtitle" content="🌶️ Daily Spice from RockLeon">
+
+
+    <meta name="description" content="RockLeon，一位橫跨領域的全端工程師，記錄自己的開發日誌、觀察隨筆。">
+
+
+    <meta name="keywords" content="RockLeon, RockLeona, Web, Dev, Developer">
+
+
+
+
+<title>視覺化探險日記(1) - 以 python-docs-zh-tw 為例 | RockLeon&#39;s Dev Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono&display=swap');
+</style>
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/frame.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="mask-border">
+    </div>
+
+    <div class="wrapper">
+
+      <div class="header">
+  <div class="flex-container">
+    <div class="header-inner">
+      <div class="site-brand-container">
+        <a href="/">
+          
+            RockLeon.DevBlog
+          
+        </a>
+      </div>
+      <div id="menu-btn" class="menu-btn" onclick="toggleMenu()">
+        Menu
+      </div>
+      <nav class="site-nav">
+        <ul class="menu-list">
+          
+            
+              <li class="menu-item">
+                <a href="/">Home</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a href="/archives/">Posts</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a target="_blank" rel="noopener" href="https://cv.rockleon.dev">Profile</a>
+              </li> 
+                   
+          
+            
+              <li class="menu-item">
+                <a target="_blank" rel="noopener" href="https://cv.rockleon.dev/linktree">LinkTree</a>
+              </li> 
+                   
+          
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main">
+        <div class="flex-container">
+          <article id="post">
+
+  
+    <div class="post-head">
+    <div class="post-info">
+        <div class="tag-list">
+            
+                
+                    <span class="post-tag">
+                        <a href="/tags/dev/">
+                            dev
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/tags/diary/">
+                            diary
+                        </a>
+                    </span>    
+                           
+            
+        </div>
+        <div class="post-title">
+            
+            
+                視覺化探險日記(1) - 以 python-docs-zh-tw 為例
+            
+            
+        </div>
+        <span class="post-date">
+            9月 11, 2023
+        </span>
+    </div>
+    <div class="post-img">
+        
+            <div class="h-line-primary"></div>
+              
+    </div>
+</div>
+    <div class="post-content">
+    <p>自從加入了 <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 翻譯計畫，好像越做越有心得(?)<br>畢竟以前沒有這種可以加入社群貢獻的機會，所以這次我沒有放掉這個機會了。</p>
+<p>本次任務是因為取得了每個頁面的瀏覽次數等資料 [1] ，<br>我想配合上 Organizer 一直有在使用的 <a target="_blank" rel="noopener" href="https://pypi.org/project/potodo/">potodo</a> 工具去計算出每個 po 檔案的翻譯完成度為何 [2] ，<br>進行了本次的資料視覺化挑戰。</p>
+<img src="/2023/09/11/visualize-first-try/code_views.png" class="" title="[code_pageviews]">
+<blockquote>
+<p>[1] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 個別頁面的瀏覽資料</p>
+</blockquote>
+<img src="/2023/09/11/visualize-first-try/code_potodo.png" class="" title="[code_potodo]">
+<blockquote>
+<p>[2] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 各項檔案的翻譯完成度資料</p>
+</blockquote>
+<p>本來想說都靠著前人有經驗產生過的資料，也來自己產生看看，<br>產生過程都沒問題，<strong>這兩個檔案的正規化 (Normalized) 才是挑戰</strong>。</p>
+<p>這個機會又讓我跟 <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">Pandas.DataFrame</a> 再次熟悉了一下。 </p>
+<p>最後的結果如下：</p>
+<ol>
+<li>頁面瀏覽次數及訪客數的曲線圖</li>
+</ol>
+<ul>
+<li>Color &#x3D;&gt; Folder</li>
+<li>X-axis &#x3D;&gt; Visitors</li>
+<li>Y-axis &#x3D;&gt; Pageviews</li>
+<li>Filter :  500 &lt; Pageviews &lt; 2500 </li>
+<li>(500 以下過於密集、2500 以上只有Tutorial&#x2F;index, Library&#x2F;datetime )<img src="/2023/09/11/visualize-first-try/pageviews_visitors.png" class="" title="[pageviews_visitors]"></li>
+</ul>
+<ol start="2">
+<li>頁面瀏覽次數及訪客數的曲線圖</li>
+</ol>
+<ul>
+<li>Color &#x3D;&gt; Filename</li>
+<li>X-axis &#x3D;&gt; Pageviews</li>
+<li>Y-axis &#x3D;&gt; Translated Percent</li>
+<li>Filter : 500 &lt; Pageviews , Remove Tutorial, Installing</li>
+<li>Note : 移掉後面兩個是不知道為什麼跟 potodo 的資料對不上 </li>
+<li>Note : 圖片中 Translated Percent 為 0 的也是 potodo 無資料<img src="/2023/09/11/visualize-first-try/pageviews_translated.png" class="" title="[pageviews_translated]"></li>
+</ul>
+<p>以前擅長的都是結合 GeoData 的地圖視覺化，這次挑戰純數字資料的視覺化是個挑戰啊。</p>
+<p>P.S. 好的資料集真的很重要，向所有的 Data Scientist 看齊！<br>P.P.S. 不小心喚起了記憶，大學時期分數最慘的科目就是<em>統計</em>。</p>
+
+</div> 
+
+<script>
+    window.onload = detectors();
+</script>
+    <div class="post-footer">
+    <div class="h-line-primary"></div>
+    <nav class="post-nav">
+        <div class="prev-item">
+           
+        </div>
+        <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/2023/09/11/hello-world/">Next</a>  
+                </div>  
+            
+        </div>
+    </nav>
+</div>
+
+    
+      <div class="post-comment">
+
+     
+
+     
+    
+    
+
+</div>
+     
+  
+</article>
+        </div>
+      </div>
+      
+      <div class="footer">
+    <div class="flex-container">
+        <div class="footer-text">
+            
+            
+            
+                Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> & <a target="_blank" rel="noopener" href="https://github.com/zoeingwingkei/frame/">Frame</a>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    
+    
+
+  </body>
+</html>
