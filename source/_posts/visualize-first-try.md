@@ -4,6 +4,7 @@ date: 2023-09-11 22:35:00
 tags:
 - dev
 - diary
+- visualize
 ---
 
 自從加入了 [python-docs-zh-tw](https://github.com/python/python-docs-zh-tw) 翻譯計畫，好像越做越有心得(?)
