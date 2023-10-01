@@ -20,7 +20,7 @@
 
 
 
-<title>視覺化探險日記(1) - 以 python-docs-zh-tw 為例 | RockLeon&#39;s Dev Blog</title>
+<title>KKTIX Banner Generator (活動旗幟產生器) | RockLeon&#39;s Dev Blog</title>
 
 
 
@@ -128,14 +128,8 @@
                     </span>    
                 
                     <span class="post-tag">
-                        <a href="/blog/tags/diary/">
-                            diary
-                        </a>
-                    </span>    
-                
-                    <span class="post-tag">
-                        <a href="/blog/tags/visualize/">
-                            visualize
+                        <a href="/blog/tags/marketing/">
+                            marketing
                         </a>
                     </span>    
                            
@@ -144,12 +138,12 @@
         <div class="post-title">
             
             
-                視覺化探險日記(1) - 以 python-docs-zh-tw 為例
+                KKTIX Banner Generator (活動旗幟產生器)
             
             
         </div>
         <span class="post-date">
-            9月 11, 2023
+            10月 1, 2023
         </span>
     </div>
     <div class="post-img">
@@ -159,42 +153,33 @@
     </div>
 </div>
     <div class="post-content">
-    <p>自從加入了 <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 翻譯計畫，好像越做越有心得(?)<br>畢竟以前沒有這種可以加入社群貢獻的機會，所以這次我沒有放掉這個機會了。</p>
-<p>本次任務是因為取得了每個頁面的瀏覽次數等資料 [1] ，<br>我想配合上 Organizer 一直有在使用的 <a target="_blank" rel="noopener" href="https://pypi.org/project/potodo/">potodo</a> 工具去計算出每個 po 檔案的翻譯完成度為何 [2] ，<br>進行了本次的資料視覺化挑戰。</p>
-<img src="/blog/2023/09/11/visualize-first-try/code_views.png" class="" title="[code_pageviews]">
+    <p>在<a href="https://hi.rockleon.dev/blog/2023/09/11/visualize-first-try/">上次文章</a>中有提到加入了 pydoc 翻譯計畫，在 2023 &#x2F; 10月舉辦一個實體活動，本次是第一次實際餐與籌備，所以意外的接觸到了 KKTIX 後台。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 翻譯計畫是 <a target="_blank" rel="noopener" href="https://sciwork.dev/">sciwork</a> 社群所支持的專案之一，很多所需的資源都是仰賴 sciwork 的基礎建設而成的，包含這次的售票系統的 KKTIX 也由他們提供。</p>
+<p>在 KKTIX 的後台中，提供了活動圖片的上傳空間，同時間他也會代表 html meta tag 的圖片，同時意味著，如果在社群媒體平台分享的話，可以有個小縮圖可以看到圖片是甚麼。</p>
+<p>在社群沒有平面設計師協助的情況之下，小弟我自告奮勇地寫了一個 Banner Generator：</p>
+<img src="/blog/2023/10/01/kktix-banner-generator/banner-pydoc.png" class="" title="[banner-pydoc]">
 <blockquote>
-<p>[1] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 個別頁面的瀏覽資料</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 2023&#x2F;10 sprint</p>
 </blockquote>
-<img src="/blog/2023/09/11/visualize-first-try/code_potodo.png" class="" title="[code_potodo]">
-<blockquote>
-<p>[2] : <a target="_blank" rel="noopener" href="https://github.com/python/python-docs-zh-tw">python-docs-zh-tw</a> 各項檔案的翻譯完成度資料</p>
-</blockquote>
-<p>本來想說都靠著前人有經驗產生過的資料，也來自己產生看看，<br>產生過程都沒問題，<strong>這兩個檔案的正規化 (Normalized) 才是挑戰</strong>。</p>
-<p>這個機會又讓我跟 <a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">Pandas.DataFrame</a> 再次熟悉了一下。 </p>
-<p>最後的結果如下：</p>
+<p>Generator 的腳本中，我使用了以下的 techstack (當然是 developed with Python):</p>
 <ol>
-<li>頁面瀏覽次數及訪客數的曲線圖</li>
+<li><a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/">Pillow</a>: 圖片編輯</li>
+<li><a target="_blank" rel="noopener" href="https://unsplash.com/documentation">Unsplash API</a>: 隨機圖片的提供者</li>
 </ol>
-<ul>
-<li>Color &#x3D;&gt; Folder</li>
-<li>X-axis &#x3D;&gt; Visitors</li>
-<li>Y-axis &#x3D;&gt; Pageviews</li>
-<li>Filter :  500 &lt; Pageviews &lt; 2500 </li>
-<li>(500 以下過於密集、2500 以上只有Tutorial&#x2F;index, Library&#x2F;datetime )<img src="/blog/2023/09/11/visualize-first-try/pageviews_visitors.png" class="" title="[pageviews_visitors]"></li>
-</ul>
-<ol start="2">
-<li>頁面瀏覽次數及訪客數的曲線圖</li>
+<p>其中遇到的幾個有趣小東西值得紀錄一下：</p>
+<ol>
+<li>Unsplash API 取得相片 URL 後，Requests GET 所得到的會直接是 Bytes 而不是 String，原本挖 Stack Overflow 的時候，有看到一個 Reference 指出需要用 StringIO 實作解析圖片， <strong>我被誤導了</strong> ，明明看過相片 URL 本身依定會回傳 Bytes，為甚麼還要用 StringIO 去解析呢？？ <strong>(暈頭轉向的我)</strong></li>
+<li>如果是合成透明圖片 (圖層) 的話，一定要用上 <code>Image.alpha_composite()</code>，不然你的圖片會有很精美的方格子出現，也就是大家最喜歡的 png 透明圖層具現化(?)</li>
 </ol>
-<ul>
-<li>Color &#x3D;&gt; Filename</li>
-<li>X-axis &#x3D;&gt; Pageviews</li>
-<li>Y-axis &#x3D;&gt; Translated Percent</li>
-<li>Filter : 500 &lt; Pageviews , Remove Tutorial, Installing</li>
-<li>Note : 移掉後面兩個是不知道為什麼跟 potodo 的資料對不上 </li>
-<li>Note : 圖片中 Translated Percent 為 0 的也是 potodo 無資料<img src="/blog/2023/09/11/visualize-first-try/pageviews_translated.png" class="" title="[pageviews_translated]"></li>
-</ul>
-<p>以前擅長的都是結合 GeoData 的地圖視覺化，這次挑戰純數字資料的視覺化是個挑戰啊。</p>
-<p>P.S. 好的資料集真的很重要，向所有的 Data Scientist 看齊！<br>P.P.S. 不小心喚起了記憶，大學時期分數最慘的科目就是<em>統計</em>。</p>
+<img src="/blog/2023/10/01/kktix-banner-generator/code_bytesio.png" class="" title="[code_bytesio]">
+<blockquote>
+<p>Using PIL.Image to open ByteIO Binary Image</p>
+</blockquote>
+<img src="/blog/2023/10/01/kktix-banner-generator/code_alphalayer.png" class="" title="[code_alphalayer]">
+<blockquote>
+<p>Image.alpha_composite() to composite the image </p>
+</blockquote>
+<p>以上就是這次的開發小記，之後有公開的 Repository 再更新上來，總計 2 個小時研究及將 PoC 開發完畢，甚是感動。</p>
 
 </div> 
 
@@ -206,17 +191,12 @@
     <nav class="post-nav">
         <div class="prev-item">
            
-                <div class="icon arrow-left"></div>
-                <div class="post-link">
-                    <a href="/blog/2023/10/01/kktix-banner-generator/">Prev</a>
-                </div>
-            
         </div>
         <div class="next-item">
             
                 <div class="icon arrow-right"></div>
                 <div class="post-link">
-                  <a href="/blog/2023/09/11/hello-world/">Next</a>  
+                  <a href="/blog/2023/09/11/visualize-first-try/">Next</a>  
                 </div>  
             
         </div>
