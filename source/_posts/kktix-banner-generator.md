@@ -31,4 +31,6 @@ Generator 的腳本中，我使用了以下的 techstack (當然是 developed wi
 {% asset_img code_alphalayer.png [code_alphalayer] %}
 > Image.alpha_composite() to composite the image 
 
-以上就是這次的開發小記，之後有公開的 Repository 再更新上來，總計 2 個小時研究及將 PoC 開發完畢，甚是感動。
+以上就是這次的開發小記，總計 2 個小時研究及將 PoC 開發完畢，甚是感動。
+
+Github Repo : https://github.com/sciwork/banner_generator
