@@ -22,7 +22,7 @@ Generator 的腳本中，我使用了以下的 techstack (當然是 developed wi
 2. [Unsplash API](https://unsplash.com/documentation): 隨機圖片的提供者
 
 其中遇到的幾個有趣小東西值得紀錄一下：
-1. Unsplash API 取得相片 URL 後，Requests GET 所得到的會直接是 Bytes 而不是 String，原本挖 Stack Overflow 的時候，有看到一個 Reference 指出需要用 StringIO 實作解析圖片， **我被誤導了** ，明明看過相片 URL 本身依定會回傳 Bytes，為甚麼還要用 StringIO 去解析呢？？ **(暈頭轉向的我)**
+1. Unsplash API 取得相片 URL 後，Requests GET 所得到的會直接是 Bytes 而不是 String，原本挖 Stack Overflow 的時候，有看到一個 Reference 指出需要用 StringIO 實作解析圖片， **我被誤導了** ，明明看過相片 URL 本身一定會回傳 Bytes，為甚麼還要用 StringIO 去解析呢？？ **(暈頭轉向的我)**
 2. 如果是合成透明圖片 (圖層) 的話，一定要用上 ```Image.alpha_composite()```，不然你的圖片會有很精美的方格子出現，也就是大家最喜歡的 png 透明圖層具現化(?)
 
 {% asset_img code_bytesio.png [code_bytesio] %}
