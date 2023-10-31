@@ -20,7 +20,7 @@
 
 
 
-<title>Hello, World | RockLeon&#39;s Dev Blog</title>
+<title>IoT 開發小記 - MQTT 交握設計 | RockLeon&#39;s Dev Blog</title>
 
 
 
@@ -122,8 +122,14 @@
             
                 
                     <span class="post-tag">
-                        <a href="/blog/tags/murmur/">
-                            murmur
+                        <a href="/blog/tags/dev/">
+                            dev
+                        </a>
+                    </span>    
+                
+                    <span class="post-tag">
+                        <a href="/blog/tags/mqtt/">
+                            mqtt
                         </a>
                     </span>    
                            
@@ -132,12 +138,12 @@
         <div class="post-title">
             
             
-                Hello, World
+                IoT 開發小記 - MQTT 交握設計
             
             
         </div>
         <span class="post-date">
-            9月 11, 2023
+            10月 31, 2023
         </span>
     </div>
     <div class="post-img">
@@ -147,8 +153,22 @@
     </div>
 </div>
     <div class="post-content">
-    <h2 id="初次見面，你好"><a href="#初次見面，你好" class="headerlink" title="初次見面，你好"></a>初次見面，你好</h2><p>這個是我人生中第一次架設 Blog <del>都 2023 了還在做這件事情</del>，<br>總之，這邊是我的小小工作紀錄，希望可以看的到我的成長，</p>
-<p>All is well and wish you well，看到這篇的你我們一起進步。</p>
+    <p>前陣子公司開了一個新案子，目的是要跟 IoT 裝置對接，<br>身為一個 FullStack Web Developer，聽到的當下眉頭不自覺的緊縮了了一下。</p>
+<p>我們需要自行設計、架設裝置以及伺服器之間，兩兩互相交握的機制。<br>(下一個目標可不可以往 System Architect 前進呢？)</p>
+<p>原本沒有那害怕的原因是因為公司有在某個 Cloud Platform 上實做一個 IoT Edge Server，<br>然而這個案子希望可以在任何機器上都可以部屬，那我看就是用 Docker Container 來處理了。</p>
+<h3 id="Why-MQTT"><a href="#Why-MQTT" class="headerlink" title="Why MQTT?"></a>Why MQTT?</h3><p>在 MQTT 上開發相對 WebSocket 來的快速、容易、方便，但相對的缺乏安全性的基礎建設維護安全。<br>對於 IoT 裝置而言，所需控制裝置數量多，採用 MQTT 似乎是個不錯的選擇，Channel 的廣播設計以及訊息之間的傳遞，讓 Server 端接收訊息的負荷不會過重。</p>
+<h3 id="幾個設計交握機制上的小-Trick"><a href="#幾個設計交握機制上的小-Trick" class="headerlink" title="幾個設計交握機制上的小 Trick"></a>幾個設計交握機制上的小 Trick</h3><ol>
+<li>實現 Zero Touch Enrollment，<br>大型案場所需面對的量級都非常恐怖，於是 Zero Touch 就成了標準配備了：<ul>
+<li>機器前來報到</li>
+<li>伺服器接受訊息，寫入資料後交握加密香料 (Spice)</li>
+<li>機器取得香料</li>
+<li>機器後須皆用香料加密 Payload</li>
+</ul>
+</li>
+<li>Act and Responce，是否伺服器要求的每個動作是否需要回報？</li>
+<li>Device v.s. Group，怎麼切出這個機制來精準動作，（channel 可以使用 wildcard 聆聽，一大福音！）</li>
+</ol>
+<p>先簡單紀錄幾個東西下來，希望接下來可以好好撐過這一年XD</p>
 
 </div> 
 
@@ -160,13 +180,13 @@
     <nav class="post-nav">
         <div class="prev-item">
            
-                <div class="icon arrow-left"></div>
-                <div class="post-link">
-                    <a href="/blog/2023/09/11/visualize-first-try/">Prev</a>
-                </div>
-            
         </div>
         <div class="next-item">
+            
+                <div class="icon arrow-right"></div>
+                <div class="post-link">
+                  <a href="/blog/2023/10/01/kktix-banner-generator/">Next</a>  
+                </div>  
             
         </div>
     </nav>
