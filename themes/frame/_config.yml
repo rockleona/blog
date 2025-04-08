@@ -12,8 +12,8 @@ logo_image:
 menu:
   Home: /
   Posts: /archives/
-  Profile: https://hi.rockleon.dev
-  LinkTree: https://hi.rockleon.dev/linktree
+  Tags: /tag/
+  About: /about/
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -31,14 +31,15 @@ date_format: MMM D, YYYY
 # profile
 profile:
   title: 嗨，陌生人
-  body: 這邊是我的開發小窩
+  subtitle: 歡迎來到我的開發小窩。
+  body: Hi stranger, welcome to my dev blog.
   image: /profile_cover.jpg
 
   links:
     Home: /
     Posts: /archives/
-    Profile: https://hi.rockleon.dev
-    LinkTree: https://hi.rockleon.dev/linktree
+    Tags: /tag/
+    About: /about/
 
 # footer
 footer:

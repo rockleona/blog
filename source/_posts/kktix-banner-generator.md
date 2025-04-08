@@ -6,7 +6,7 @@ tags:
 - marketing
 ---
 
-在[上次文章](https://hi.rockleon.dev/blog/2023/09/11/visualize-first-try/)中有提到加入了 pydoc 翻譯計畫，在 2023 / 10月舉辦一個實體活動，本次是第一次實際餐與籌備，所以意外的接觸到了 KKTIX 後台。
+在[上次文章](https://rockleon.dev/2023/09/11/visualize-first-try/)中有提到加入了 pydoc 翻譯計畫，在 2023 / 10月舉辦一個實體活動，本次是第一次實際餐與籌備，所以意外的接觸到了 KKTIX 後台。
 
 [python-docs-zh-tw](https://github.com/python/python-docs-zh-tw) 翻譯計畫是 [sciwork](https://sciwork.dev/) 社群所支持的專案之一，很多所需的資源都是仰賴 sciwork 的基礎建設而成的，包含這次的售票系統的 KKTIX 也由他們提供。
 
