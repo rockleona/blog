@@ -23,7 +23,7 @@ date: 2025-02-11 23:32:55
     </div>
 </div>
 
-Li-Hung is a software engineer at Inventec, Taipei, Taiwan, specializing in website development while enjoying exploring various domains of software engineering.
+Li-Hung is a software engineer, specializing in web programming while enjoying exploring various domains of software engineering.
 
 He is also an active contributor to the open-source community, not only by writing code but also by organizing events. He believes that contributing to open source sharpens his skills in many ways, including research, software development, and team collaboration.
 
@@ -33,7 +33,7 @@ In addition, Li-Hung is passionate about lifelong learning and personal growth. 
 
 ---
 
-Li-Hung 是一位任職於英業達的軟體工程師，專注於網站開發，同時也熱衷於探索軟體工程的不同領域。
+Li-Hung 是一位軟體工程師，專注於網路程式開發，同時也熱衷於探索軟體工程的不同領域。
 
 他也是開源社群的積極貢獻者，不僅撰寫程式碼，還參與組織活動。他相信，參與開源貢獻能以多種方式磨練自己的技能，包括研究、軟體開發以及團隊協作。
 
