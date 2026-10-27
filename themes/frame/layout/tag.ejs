@@ -1,15 +1,28 @@
 <div id="tag">
   <% if(is_tag()){ %>
 
+    <% if (theme.color_mode == 'apple') { %>
+      <div class="page-heading">
+        <a class="page-eyebrow" href="<%=url_for('/tag/')%>">Tags</a>
+        <h1 class="page-title"><%=page.tag%></h1>
+      </div>
+    <% } else { %>
     <p class="tag-title">
       / <a href="<%=url_for(/tag/)%>">tags</a>
       / <a href="<%=page.tag.path%>"><%=page.tag%></a> /
     </p>
+    <% } %>
     <%- partial('partials/post_list') %>
 
   <% }else{ %>
 
+    <% if (theme.color_mode == 'apple') { %>
+      <div class="page-heading">
+        <h1 class="page-title"><%= page.title || 'Tags' %></h1>
+      </div>
+    <% } else { %>
     <p class="tag-title">/ browse by tags /</p>
+    <% } %>
     <%- partial('partials/tag_cloud') %>
     
   <% } %>

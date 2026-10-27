@@ -1,0 +1,102 @@
+/*
+
+Apple style: Xcode "Default (Light)" / "Default (Dark)" token colors,
+switched by prefers-color-scheme through CSS custom properties.
+
+*/
+
+:root
+  --hl-bg #f5f5f7
+  --hl-text #1d1d1f
+  --hl-comment #5d6c79
+  --hl-keyword #9b2393
+  --hl-string #c41a16
+  --hl-number #1c00cf
+  --hl-type #0b4f79
+  --hl-function #326d74
+  --hl-attr #815f03
+  --hl-meta #643820
+  --hl-addition rgba(52, 199, 89, 0.15)
+  --hl-deletion rgba(255, 59, 48, 0.15)
+
+@media (prefers-color-scheme: dark)
+  :root
+    --hl-bg #1c1c1e
+    --hl-text #e5e5e7
+    --hl-comment #7f8c98
+    --hl-keyword #fc5fa3
+    --hl-string #fc6a5d
+    --hl-number #d0bf69
+    --hl-type #5dd8ff
+    --hl-function #67b7a4
+    --hl-attr #bf8555
+    --hl-meta #fd8f3f
+    --hl-addition rgba(48, 209, 88, 0.2)
+    --hl-deletion rgba(255, 69, 58, 0.2)
+
+.highlight
+  color var(--hl-text)
+  background var(--hl-bg)
+  .code
+    .comment,
+    .quote
+      color var(--hl-comment)
+      font-style italic
+
+    .keyword,
+    .selector-tag,
+    .literal
+      color var(--hl-keyword)
+      font-weight 600
+
+    .string,
+    .regexp,
+    .link
+      color var(--hl-string)
+
+    .number,
+    .symbol,
+    .bullet
+      color var(--hl-number)
+
+    .title,
+    .section,
+    .class .title,
+    .type,
+    .built_in,
+    .builtin-name
+      color var(--hl-type)
+
+    .title.function_,
+    .function .title,
+    .name,
+    .tag
+      color var(--hl-function)
+
+    .attr,
+    .attribute,
+    .params,
+    .variable,
+    .template-variable,
+    .selector-id,
+    .selector-class
+      color var(--hl-attr)
+
+    .meta
+      color var(--hl-meta)
+
+    .subst
+      color var(--hl-text)
+
+    .addition
+      background-color var(--hl-addition)
+
+    .deletion
+      background-color var(--hl-deletion)
+
+    .doctag,
+    .strong
+      font-weight bold
+
+    .emphasis
+      font-style italic
