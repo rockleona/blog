@@ -41,3 +41,7 @@
 // component
 @import "component/icon.styl"
 @import "component/component.styl"
+
+// apple mode overrides
+if hexo-config("color_mode") == 'apple'
+    @import "_apple.styl"

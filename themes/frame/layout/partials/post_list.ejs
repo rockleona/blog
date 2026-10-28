@@ -5,7 +5,9 @@
         <% var cur_year = post.date.year(); %>
 
         <% if(last_year !== cur_year){ %>
+            <% if (last_year !== '') { %></div><% } %>
             <div class="year-title"><%- cur_year %></div>
+            <div class="post-list-group">
         <% last_year = cur_year; } %>
 
         <div class="post-list-item">
@@ -23,6 +25,7 @@
         </div>
 
     <% }) %>
+    <% if (last_year !== '') { %></div><% } %>
     <div id="paginator">
         <%- partial('partials/paginator') %>
     </div>

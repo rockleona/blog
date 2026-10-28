@@ -21,12 +21,12 @@ stylesheets:
 
 # scripts loaded in the end of the body
 scripts:
-- /js/frame.js
+- /js/menu.js
 
 # favicon
 favicon: /favicon.png
 
-date_format: MMM D, YYYY
+date_format: 'YYYY [年] M [月] D [日]'
 
 # profile
 profile:
@@ -54,8 +54,8 @@ footer:
     enable: false
     content:
 
-# color mode: default / classic / dark
-color_mode: default
+# color mode: default / classic / dark / apple
+color_mode: apple
 
 # mathjax setting
 # note: need to install the hexo plugin for math: https://github.com/hexojs/hexo-math

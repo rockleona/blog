@@ -1,0 +1,82 @@
+// Apple mode: colors are CSS custom properties so light / dark
+// follows the system setting (prefers-color-scheme) at runtime.
+:root
+  color-scheme light dark
+  --color-bg #ffffff
+  --color-bg-secondary #f5f5f7
+  --color-bar rgba(255, 255, 255, 0.8)
+  --color-label #1d1d1f
+  --color-secondary-label #6e6e73
+  --color-tertiary-label #86868b
+  --color-separator #d2d2d7
+  --color-fill rgba(0, 0, 0, 0.05)
+  --color-link #0066cc
+  --color-code-inline #c41a16
+  --color-search-marker #fff59b
+  --color-overlay rgba(0, 0, 0, 0.2)
+
+@media (prefers-color-scheme: dark)
+  :root
+    --color-bg #000000
+    --color-bg-secondary #1d1d1f
+    --color-bar rgba(22, 22, 23, 0.8)
+    --color-label #f5f5f7
+    --color-secondary-label #a1a1a6
+    --color-tertiary-label #86868b
+    --color-separator #424245
+    --color-fill rgba(255, 255, 255, 0.08)
+    --color-link #2997ff
+    --color-code-inline #ff8170
+    --color-search-marker #756d29
+    --color-overlay rgba(0, 0, 0, 0.6)
+
+// COLOR
+$color-text-primary = var(--color-label)
+$color-text-secondary = var(--color-secondary-label)
+$color-text-third = var(--color-separator)
+$color-text-fourth = var(--color-fill)
+$color-background = var(--color-bg)
+
+$color-code-background = var(--color-bg-secondary)
+$color-code-highlight = var(--color-code-inline)
+$color-code-default = var(--color-label)
+$color-code-marker = var(--color-tertiary-label)
+
+$color-search-marker = var(--color-search-marker)
+$color-overlay = var(--color-overlay)
+
+// FONT FAMILY
+$font-family-sans = -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang TC', 'Inter', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif
+$font-family-mono = 'SF Mono', ui-monospace, Menlo, 'Roboto Mono', monospace
+
+// TYPE SCALE (html font-size is reset to 16px in _apple.styl, so $px = 1px)
+// ?= keeps Hexo's standalone render of this file from failing
+$px ?= 0.0625rem
+$font-size-header = 14*$px
+$font-size-footer = 12*$px
+$font-size-heading-h1 = 40*$px
+$font-size-heading-h2 = 28*$px
+$font-size-heading-h3 = 22*$px
+$font-size-heading-h4 = 19*$px
+$font-size-heading-h5 = 17*$px
+$font-size-heading-h6 = 17*$px
+$font-size-body = 17*$px
+$font-size-code = 14*$px
+$font-size-post-date = 15*$px
+$font-size-year-title = 28*$px
+
+$line-height-header = 20*$px
+$line-height-footer = 18*$px
+$line-height-heading-h1 = 48*$px
+$line-height-heading-h2 = 36*$px
+$line-height-heading-h3 = 30*$px
+$line-height-heading-h4 = 28*$px
+$line-height-heading-h5 = 26*$px
+$line-height-heading-h6 = 26*$px
+$line-height-body = 30*$px
+$line-height-code = 22*$px
+$line-height-post-date = 20*$px
+$line-height-year-title = 36*$px
+
+// CODE HIGHLIGHT
+@import "../highlight/apple.styl"
