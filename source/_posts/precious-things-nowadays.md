@@ -1,7 +1,9 @@
 ---
 title: 在 AI 時代之下，很多東西很的珍貴
 date: 2026-10-30 13:29:04
-tags: AI, content creation
+tags: 
+- AI 
+- content creation
 ---
 
 現在靠 AI 創作任何東西都太快了：以前會覺得我做出一個作品，好屌；但現在你不用 10 分鐘就可以做出一個可以上線的趣味作品。
