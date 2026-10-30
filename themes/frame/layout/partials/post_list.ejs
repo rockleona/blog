@@ -1,14 +1,14 @@
 <div class="post-list">
-    <% var last_year = ''; %>
+    <% var last_month = ''; %>
     <% page.posts.each(function (post) { %>
 
-        <% var cur_year = post.date.year(); %>
+        <% var cur_month = post.date.format('YYYY-MM'); %>
 
-        <% if(last_year !== cur_year){ %>
-            <% if (last_year !== '') { %></div><% } %>
-            <div class="year-title"><%- cur_year %></div>
+        <% if(last_month !== cur_month){ %>
+            <% if (last_month !== '') { %></div><% } %>
+            <div class="year-title"><%- post.date.format('YYYY [年] M [月]') %></div>
             <div class="post-list-group">
-        <% last_year = cur_year; } %>
+        <% last_month = cur_month; } %>
 
         <div class="post-list-item">
             <div class="post-title">
@@ -25,7 +25,7 @@
         </div>
 
     <% }) %>
-    <% if (last_year !== '') { %></div><% } %>
+    <% if (last_month !== '') { %></div><% } %>
     <div id="paginator">
         <%- partial('partials/paginator') %>
     </div>
